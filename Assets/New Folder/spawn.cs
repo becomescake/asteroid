@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Spawner_Script : MonoBehaviour
 {
-    public GameObject enemyPrefab;
+    public GameObject[] enemyPrefab;
     public float spawnerDelay;
     public float positionMedium;
     public float spawnerSize;
@@ -33,6 +33,6 @@ public class Spawner_Script : MonoBehaviour
     void Spawn()
     {
         SpawnerArea();
-        Instantiate(enemyPrefab, new Vector3(spawnArea, 12, 0), Quaternion.identity);
+        Instantiate(enemyPrefab[Random.Range(0, 3)], new Vector3(spawnArea, 12, 0), Quaternion.identity);
     }
 }
